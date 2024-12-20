@@ -22,7 +22,7 @@ function ChatHistory({messages}: {messages: Message[]}) {
         <div key={message.id} className="flex items-start p-4">
           <div className="mr-2">{renderMessageIcon(message.sender)}</div>
           <div>
-            <div className="font-semibold">{message.sender}</div>
+            <div className="font-semibold capitalize">{message.sender}</div>
             <div>{message.content}</div>
           </div>
         </div>

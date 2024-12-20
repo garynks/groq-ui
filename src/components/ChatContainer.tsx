@@ -28,7 +28,7 @@ function ChatContainer() {
     }
   };
   return (
-    <div>
+    <div className="flex flex-col h-full max-w-4xl mx-auto">
       <ChatHistory messages={messages} />
       <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
     </div>

@@ -36,7 +36,7 @@ function ChatInput({ onSendMessage, isLoading = false }: ChatInputProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-end p-4 border-t bg-white"
+      className="flex items-end p-4 bg-white"
     >
       <div className="flex-grow mr-2">
         <Textarea

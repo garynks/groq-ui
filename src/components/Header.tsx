@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getAvailableModels } from "../services/llmService";
-import "@/styles/Header.css";
 import {
   Select,
   SelectContent,
@@ -33,10 +32,10 @@ function Header({ onModelSelect, currentModel }: HeaderProps) {
   const availableModels = ["llama3-8b-8192", "gpt-3.5-turbo", "gpt-4.2-jumbo"];
 
   return (
-    <header>
+    <header className="flex justify-between items-center p-4 mx-auto max-w-4xl">
       <a href="https://groq.com/">
         <img
-          className="logo"
+          className="h-8 w-auto"
           src="../src/assets/Groq_Logo_24_black.svg"
           alt="Groq Logo"
         />
