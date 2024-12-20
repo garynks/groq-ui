@@ -6,13 +6,12 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 interface HeaderProps {
   onModelSelect: (model: string) => void;
   currentModel: string;
 }
-
 
 function Header({ onModelSelect, currentModel }: HeaderProps) {
   //   const [availableModels, setAvailableModels] = useState<string[]>([]);
@@ -29,7 +28,11 @@ function Header({ onModelSelect, currentModel }: HeaderProps) {
   //     fetchModels();
   //   }, []);
 
-  const availableModels = ["llama3-8b-8192", "gpt-3.5-turbo", "gpt-4.2-jumbo"];
+  const availableModels = [
+    "llama3-8b-8192",
+    "whisper-large-v3",
+    "mixtral-8x7b-32768",
+  ];
 
   return (
     <header className="flex justify-between items-center p-4 mx-auto max-w-4xl">
@@ -40,7 +43,7 @@ function Header({ onModelSelect, currentModel }: HeaderProps) {
           alt="Groq Logo"
         />
       </a>
-      <Select>
+      <Select value={currentModel} onValueChange={onModelSelect}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Select a model" />
         </SelectTrigger>

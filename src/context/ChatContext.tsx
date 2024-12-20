@@ -36,12 +36,12 @@ export const ChatProvider = ({ children, initialModel = "llama3-8b-8192" }) => {
       // Add LLM response to chat history
       setMessages((prevMessages) => [...prevMessages, responseMessage]);
     } catch (error) {
-      console.error("Error getting LLM repsonse:", error);
+      console.error("Error getting LLM response:", error);
 
       // Create error message
       const errorMessage = {
         id: Date.now().toString(),
-        content: "Sorry, there was an error processing your message.",
+        content: "Sorry, there was an error processing your message." + error.response["data"]["error"]["message"],
         sender: "system",
         timestamp: new Date(),
       };
