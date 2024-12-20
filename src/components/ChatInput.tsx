@@ -44,6 +44,7 @@ function ChatInput({ onSendMessage, isLoading = false }: ChatInputProps) {
           placeholder="Type a message..."
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
+          value={message}
           rows={1}
         />
       </div>

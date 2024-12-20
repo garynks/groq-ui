@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Message } from '@/types/chat';
 import {User, Bot} from 'lucide-react'
 
 function ChatHistory({messages}: {messages: Message[]}) {
+  // Automatically scroll to the bottom when new messages are added
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+  useEffect (() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
+
   const renderMessageIcon = (sender: Message['sender']) => {
     switch (sender) {
       case 'user':
