@@ -14,25 +14,19 @@ interface HeaderProps {
 }
 
 function Header({ onModelSelect, currentModel }: HeaderProps) {
-  //   const [availableModels, setAvailableModels] = useState<string[]>([]);
+    const [availableModels, setAvailableModels] = useState<string[]>([currentModel]);
 
-  //   useEffect(() => {
-  //     const fetchModels = async () => {
-  //       try {
-  //         const models = await getAvailableModels();
-  //         setAvailableModels(models.data);
-  //       } catch (error) {
-  //         console.error("Failed to fetch models:", error);
-  //       }
-  //     };
-  //     fetchModels();
-  //   }, []);
-
-  const availableModels = [
-    "llama3-8b-8192",
-    "whisper-large-v3",
-    "mixtral-8x7b-32768",
-  ];
+    useEffect(() => {
+      const fetchModels = async () => {
+        try {
+          const models = await getAvailableModels();
+          setAvailableModels(models);
+        } catch (error) {
+          console.error("Failed to fetch models:", error);
+        }
+      };
+      fetchModels();
+    }, []);
 
   return (
     <header className="flex justify-between items-center p-4 mx-auto max-w-4xl">
