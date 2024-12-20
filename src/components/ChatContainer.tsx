@@ -3,7 +3,7 @@ import ChatHistory from "./ChatHistory";
 import ChatInput from "./ChatInput";
 import { ChatContext } from "../context/ChatContext";
 
-function ChatContainer({ model }: { model: string }) {
+function ChatContainer() {
   const { messages, sendMessage } = useContext(ChatContext);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +14,7 @@ function ChatContainer({ model }: { model: string }) {
       setIsLoading(true);
 
       const userMessage = {
-        id: `msg-${Date.now()}`,
+        id: Date.now().toString(),
         content: userInput,
         sender: "user",
         timestamp: new Date(),

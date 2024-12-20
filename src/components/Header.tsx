@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAvailableModels } from "../services/llmService";
-import "../styles/Header.css";
+import "@/styles/Header.css";
 import {
   Select,
   SelectContent,
@@ -9,8 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+interface HeaderProps {
+  onModelSelect: (model: string) => void;
+  currentModel: string;
+}
 
-function Header() {
+
+function Header({ onModelSelect, currentModel }: HeaderProps) {
   //   const [availableModels, setAvailableModels] = useState<string[]>([]);
 
   //   useEffect(() => {
