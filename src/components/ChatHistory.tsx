@@ -29,12 +29,18 @@ function ChatHistory({messages}: {messages: Message[]}) {
           <div className="mr-2">{renderMessageIcon(message.sender)}</div>
           <div>
             <div className="font-semibold capitalize">{message.sender}</div>
-            <div>{message.content}</div>
+            <p>{message.content}</p>
+            <small className="text-xs text-gray-500">
+              {message.timestamp.toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+              })}
+            </small>
           </div>
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 export default ChatHistory
