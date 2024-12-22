@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Groq UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that provides an intuitive interface for interacting with Large Language Models through the Groq API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time chat interface for interacting with LLMs
+- Responsive design that works seamlessly across desktop and mobile devices
+- Clean, modern UI built with Tailwind CSS
+- Efficient state management for chat history and responses
+- Integration with Groq's high-performance API
+- Markdown support for formatted messages
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend Framework**: React
+- **Styling**: Tailwind CSS
+- **API Integration**: Groq API
+- **Language**: TypeScript
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+- Groq API key
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/garynks/groq-ui.git
+cd groq-ui
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Create a `.env` file in the root directory and add your Groq API key:
+```
+VITE_API_KEY=your_api_key_here
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+## Usage
+
+1. Navigate to `http://localhost:5173` (or the port specified by your Vite configuration)
+2. Enter your message in the chat interface
+3. Receive AI-generated responses in real-time
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the GNU General Public License v3 (GPLv3) License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Groq for providing the API
+- React and Tailwind CSS communities
