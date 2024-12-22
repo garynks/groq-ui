@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { Message } from '@/types/chat';
 import {User, Bot} from 'lucide-react'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm';
 
 function ChatHistory({messages}: {messages: Message[]}) {
   // Automatically scroll to the bottom when new messages are added
@@ -29,7 +31,12 @@ function ChatHistory({messages}: {messages: Message[]}) {
           <div className="mr-2">{renderMessageIcon(message.sender)}</div>
           <div>
             <div className="font-semibold capitalize">{message.sender}</div>
-            <p>{message.content}</p>
+            <Markdown
+              className="prose max-w-none"
+              remarkPlugins={[remarkGfm]}
+            >
+              {message.content}
+            </Markdown>
             <small className="text-xs text-gray-500">
               {message.timestamp.toLocaleTimeString("en-US", {
                 hour: "numeric",
