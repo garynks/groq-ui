@@ -37,7 +37,7 @@ function ChatHistory({messages}: {messages: Message[]}) {
             >
               {message.content}
             </Markdown>
-            <small className="text-xs text-gray-500">
+            <small className="text-xs text-gray-500 dark:text-gray-300">
               {message.timestamp.toLocaleTimeString("en-US", {
                 hour: "numeric",
                 minute: "numeric",
@@ -46,6 +46,7 @@ function ChatHistory({messages}: {messages: Message[]}) {
           </div>
         </div>
       ))}
+      <div ref={messagesEndRef} />
     </div>
   );
 }

@@ -36,7 +36,7 @@ function ChatInput({ onSendMessage, isLoading = false }: ChatInputProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-end p-4 bg-white"
+      className="flex items-end p-4"
     >
       <div className="flex-grow mr-2">
         <Textarea
@@ -48,11 +48,17 @@ function ChatInput({ onSendMessage, isLoading = false }: ChatInputProps) {
           rows={1}
         />
       </div>
-      <Button className="mb-1 rounded" type="submit" size="icon" disabled={isLoading || message.trim().length === 0}>
+      <Button
+        className="mb-1 rounded"
+        type="submit"
+        size="icon"
+        variant="default"
+        disabled={isLoading || message.trim().length === 0}
+      >
         {isLoading ? (
           <span className="animate-spin">↻</span>
         ) : (
-          <Send className="h-5 w-5"/>
+          <Send className="h-5 w-5" />
         )}
       </Button>
     </form>
